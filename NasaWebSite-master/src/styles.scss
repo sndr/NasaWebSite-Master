@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    outline: none;
+}
+
+/* Tailwind component layer: move @apply rules here so they are processed by PostCSS/Tailwind */
+@layer components {
+    .container_header { @apply w-full max-w-6xl mx-auto; }
+
+    .nav { @apply flex items-center justify-center gap-4 px-3 sm:gap-6 sm:px-4; }
+
+    .search-bar { @apply w-full max-w-screen-md flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4; }
+
+    .search-input { @apply w-full sm:w-[32rem] px-5 py-3.5 rounded-xl border border-gray-300 bg-white/95 text-gray-900 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500 text-lg transition-all duration-200; }
+
+    .github-link { @apply inline-flex items-center; }
+
+    .search-button { @apply w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-black font-medium border border-gray-300 shadow-sm hover:bg-white active:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500/20 transition-colors; }
+}

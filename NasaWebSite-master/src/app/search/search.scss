@@ -1,0 +1,35 @@
+.results-title{
+    @apply text-center text-3xl font-bold tracking-tight text-black mb-6;
+}
+/* Search page styles using Tailwind via @apply for clarity */
+.results-grid{
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.result-card{
+    @apply relative rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow flex flex-col;
+}
+
+.result-image{
+    @apply w-full h-40 object-cover cursor-zoom-in transition-transform duration-300;
+}
+
+/* Hover zoom without using Tailwind group variant to satisfy angular-sass */
+.result-card:hover .result-image{
+    @apply scale-110;
+}
+
+.result-body{
+    @apply p-3 flex flex-col gap-1.5 flex-1;
+}
+
+.result-title{
+    @apply text-sm font-semibold leading-snug line-clamp-2;
+}
+
+.result-text{
+    @apply text-gray-600 text-xs line-clamp-3;
+}
+section{
+    padding: 20px;
+}
