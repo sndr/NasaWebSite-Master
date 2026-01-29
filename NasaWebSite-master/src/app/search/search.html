@@ -1,8 +1,8 @@
 <section class="px-4 py-6">
-    <h1 class="results-title">Results</h1>
+    <h1 class="results-title">Content</h1>
 
     @if (items.length === 0) {
-      <p class="text-center text-white/80">waiting</p>
+      <p class="text-center text-white/80">WAITING...</p>
     } @else {
       <div class="results-grid">
         @for (item of items; track $index) {

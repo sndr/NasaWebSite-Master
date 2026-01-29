@@ -2,7 +2,7 @@
     <div class="container_header">
         <nav class="nav">
             <form class="search-bar" (submit)="$event.preventDefault(); onSearch(input.value)">
-                <input #input type="text" name="q" placeholder="Search..." aria-label="Search" class="search-input" (keydown.enter)="$event.preventDefault(); onSearch(input.value)">
+                <input #input type="text" name="q" placeholder="Search..." aria-label="Search" class="search-input" keypress.enter (keydown.enter)="$event.preventDefault(); onSearch(input.value)">
                 <button type="submit" class="search-button">Search</button>
             </form>
             <github-photo></github-photo>
