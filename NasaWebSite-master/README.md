@@ -1,59 +1,54 @@
 # NasaWebSite
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Aplicação em Angular que permite pesquisar imagens na API pública da NASA e visualizar as fotos em um modal (expandido) com botão de fechar.
 
-## Development server
+## Requisitos
 
-To start a local development server, run:
+- Node.js (recomendado: LTS)
+- npm (ou outro gerenciador compatível)
 
-```bash
-ng serve
-```
+## Rodando o projeto (dev)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Na pasta `NasaWebSite-master`:
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abra `http://localhost:4200/`.
+
+## Como usar
+
+- **Pesquisar**: digite um termo no header e clique em **Search**
+- **Ver imagem em tela cheia**: clique em qualquer miniatura para abrir o modal centralizado
+- **Fechar modal**: clique fora da imagem, clique em **Fechar**, ou pressione `Esc`
+- **Voltar para o início**: clique no ícone de **casinha** no canto esquerdo do header (também limpa a busca)
+
+## Scripts úteis
 
 ```bash
-ng generate --help
+# dev server
+npm start
+
+# build
+npm run build
+
+# tests
+npm test
 ```
 
-## Building
+## Stack
 
-To build the project run:
+- Angular (standalone components + Router)
+- Tailwind CSS (usado via `@apply` em SCSS)
+- NASA Images API: `https://images-api.nasa.gov/search`
 
-```bash
-ng build
-```
+## Estrutura (principais arquivos)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `src/app/header/` header com busca + botão home
+- `src/app/search/` tela de resultados + modal de imagem
 
-## Running unit tests
+## Notas
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli).
