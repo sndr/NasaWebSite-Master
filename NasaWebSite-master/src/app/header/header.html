@@ -1,6 +1,11 @@
 <header>
     <div class="container_header">
         <nav class="nav">
+            <button type="button" class="home-link" (click)="goHome()" aria-label="Voltar para a página inicial">
+                <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 3.1 2.7 11a1 1 0 0 0 1.3 1.5L5 11.7V20a1 1 0 0 0 1 1h4.5a1 1 0 0 0 1-1v-5h1v5a1 1 0 0 0 1 1H18a1 1 0 0 0 1-1v-8.3l1 0.8A1 1 0 1 0 21.3 11L12 3.1Z"/>
+                </svg>
+            </button>
             <form class="search-bar" (submit)="$event.preventDefault(); onSearch(input.value)">
                 <input #input type="text" name="q" placeholder="Search..." aria-label="Search" class="search-input" keypress.enter (keydown.enter)="$event.preventDefault(); onSearch(input.value)">
                 <button type="submit" class="search-button">Search</button>

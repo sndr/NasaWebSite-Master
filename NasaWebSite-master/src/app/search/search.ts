@@ -14,10 +14,8 @@ import { Subscription } from 'rxjs';
 export class Search {
   items: Array<{ title: string; description: string; imageUrl?: string }> = [];
   selectedImageUrl?: string;
-  previewImageUrl?: string;
   private subscription?: Subscription;
 
-  // NASA Images API does not require an API key; keep reader for future use if needed
   private buildNasaImagesUrl(query: string): string {
     const params = new URLSearchParams({ media_type: 'image', q: query });
     return `https://images-api.nasa.gov/search?${params.toString()}`;
@@ -28,7 +26,11 @@ export class Search {
   ngOnInit(): void {
     this.subscription = this.searchService.searchTerm$.subscribe((term) => {
       const query = term?.trim();
-      if (!query) return;
+      if (!query) {
+        this.items = [];
+        this.selectedImageUrl = undefined;
+        return;
+      }
       this.searchingApi(query);
     });
   }
@@ -37,7 +39,7 @@ export class Search {
     this.subscription?.unsubscribe();
   }
 
-  searchingApi(query: string) { // Perform search using NASA API
+  searchingApi(query: string) { 
 
     interface NasaItem {
       data: Array<{ title: string; description?: string; description_508?: string }>;
@@ -80,15 +82,6 @@ export class Search {
   @HostListener('document:keydown.escape')
   onEsc(): void {
     this.closeImage();
-  }
-
-  onPreview(url?: string): void {
-    if (!url) return;
-    this.previewImageUrl = url;
-  }
-
-  endPreview(): void {
-    this.previewImageUrl = undefined;
   }
 
 }
