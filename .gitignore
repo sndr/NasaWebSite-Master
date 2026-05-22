@@ -41,4 +41,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-../NasaWebSite/src/app/search/api.validation.txt
+src/app/search/api.validation.txt

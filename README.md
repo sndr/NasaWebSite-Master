@@ -9,7 +9,7 @@ Aplicação em Angular que permite pesquisar imagens na API pública da NASA e v
 
 ## Rodando o projeto (dev)
 
-Na pasta `NasaWebSite-master`:
+Na raiz do repositório:
 
 ```bash
 npm install
